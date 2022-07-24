@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://bagusok.github.io/bagusok.github.io",
+  "homepage": "https://bagusok.github.io/",
   "scripts": {
     "predeploy": "vite build",
     "deploy": "gh-pages -d build",
@@ -14,6 +14,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
