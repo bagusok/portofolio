@@ -8,7 +8,7 @@ import Skills from './pages/Skills';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Navbar />
       <div className="box-border px-3 min-h-screen w-full bg-slate-100">
         <Routes basename="/">
