@@ -1,0 +1,186 @@
+{
+	"nav": {
+		"about": "About",
+		"education": "Education",
+		"experience": "Experience",
+		"projects": "Projects",
+		"skills": "Skills",
+		"contact": "Contact",
+		"cta": "Hire Me",
+		"viewProjects": "View All Projects"
+	},
+	"hero": {
+		"badge": "Open to work",
+		"title": "Hi, I'm",
+		"highlight": "Rizqi Bagus Andrean",
+		"subtitle": "An Informatics Engineering student who is passionate about technology and web/mobile app development. I enjoy solving real problems through clean, measurable, and user-focused digital products.",
+		"primaryCta": "View Projects",
+		"secondaryCta": "Get in Touch",
+		"note": "Fast learner, precise executor, continuous improver."
+	},
+	"about": {
+		"title": "I build digital solutions from concept to implementation.",
+		"description": "I combine business logic, user experience, and engineering quality to deliver products that create practical impact.",
+		"points": [
+			"Hands-on with academic, research showcase, and freelance projects.",
+			"Built recommendation systems using Fuzzy and TOPSIS methods.",
+			"Actively mentoring mobile development in campus miniclasses."
+		]
+	},
+	"education": {
+		"title": "Education",
+		"subtitle": "Academic background and project contributions during study.",
+		"items": [
+			{
+				"school": "Politeknik Negeri Malang",
+				"major": "Informatics Engineering",
+				"period": "August 2023 - Present",
+				"grade": "GPA 3.75/4.00",
+				"highlights": [
+					"Built a research showcase website for the Smart Green Energy Research Center (Electrical Engineering Department, Polinema).",
+					"Developed a PBL Achievement Recording System with decision-support features using Fuzzy and TOPSIS methods for student/lecturer recommendation."
+				]
+			},
+			{
+				"school": "SMKN 1 Bandung Tulungagung",
+				"major": "Computer and Network Engineering",
+				"period": "June 2019 - June 2022",
+				"grade": "Score 88/100",
+				"highlights": ["Joined Samsung Tech Institute industrial class program."]
+			}
+		]
+	},
+	"experience": {
+		"title": "Experience Timeline",
+		"subtitle": "My progression from mentoring to mobile division leadership.",
+		"timeline": [
+			{
+				"role": "Mobile Developer Miniclass Mentor",
+				"organization": "Informatics Workshop & Research - Polinema",
+				"period": "October 2024 - Present",
+				"details": [
+					"Explained core Flutter widget concepts and layout structuring.",
+					"Mentored miniclass participants in mobile app development fundamentals using Flutter."
+				]
+			},
+			{
+				"role": "Vice Head of Mobile Developer Division",
+				"organization": "Informatics Workshop & Research - Polinema",
+				"period": "January 2025 - December 2025",
+				"details": [
+					"Led coordination for mobile development division programs.",
+					"Planned learning roadmap and member project guidance.",
+					"Continued mentoring in miniclass programs in parallel."
+				]
+			},
+			{
+				"role": "Freelance Web Developer",
+				"organization": "Independent",
+				"period": "January 2023 - Present",
+				"details": [
+					"Fixed bugs on production websites.",
+					"Built bot and workflow automation for ordering processes.",
+					"Implemented multi payment gateway integration in web applications."
+				]
+			}
+		]
+	},
+	"certifications": {
+		"title": "Certifications",
+		"subtitle": "Competency validation through official certifications and intensive programs.",
+		"items": [
+			"Junior Web Developer - BNSP (June 2025)",
+			"KKNI Level 2 Computer & Network Engineering - BNSP (May 2022)",
+			"Expert Multi Platform App Developer Class - IDCAMP IOH (April 2024)"
+		]
+	},
+	"projects": {
+		"title": "Selected Projects",
+		"subtitle": "Products I built with a focus on reliability and maintainability.",
+		"items": [
+			{
+				"name": "Baguspay - PPOB & Game Top-up Platform",
+				"description": "PPOB and game top-up transaction platform built with a modular architecture for scalability.",
+				"stack": "Typescript, Monorepo, React.js, React Router v7, NestJS, AdonisJS, PostgreSQL, Redis, Tailwind CSS",
+				"period": "2025",
+				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWfEDY79CxVgSjw_6xAVchVdKe-yeGyU4PoDvycvL2AsbHZN9rje5pUArfJHU08NPeDCFpADjp8Z3HuEKkh1wTHu6pFuNmQc7sdsWqw_MtAmsuRxzpfQ6KlNt7sNHWVzeltKtQoo-9RL_42HTVX_-rs1HqdLN3cLOz22CVFr_snfdlBVmZuzfAH4YccskJ_MmixoO6XrtgdhdIu9q8OhE54hInbDhBOPMQAswmapAGbNpkzqXNAUae-a_1H-O6T_EHQEhXjjoEwwI"
+			},
+			{
+				"name": "Miramine - Anime Streaming Platform",
+				"description": "Cross-platform streaming app implemented with a fullstack web and mobile approach.",
+				"stack": "Typescript, Next.js, Flutter, Hono, Bun, Tailwind CSS",
+				"period": "2024",
+				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBtb99m9g4LxKkAXpx6Mq41uAShdSifgDtDty7A5lxB-H3KxlWkKv6GdCJs6uD-oMO-N8jr7mFIo4qGs-WtCPtc-wVf5z97GETYOBU8GLd-SPE9BeTJ3wvxx5k5NREYAnkAaQ5XuHbAF7QxBy_kgD62eRptCQt5MHYs1cnWiz6vEQNyiopvtqfCAlPMBEFQ1UIkdGLJxImb9m1PUiVmcSnMpbRGu4ES2-dyFR-SBgMAX8svPICNDv4HaYEPWCXEa9YBoi69yBqZOSc"
+			},
+			{
+				"name": "Laskayara - Student Achievement Recording System",
+				"description": "Achievement recording platform with decision-support capabilities for relevant recommendation flows.",
+				"stack": "Typescript, PHP, Laravel, Inertia, React.js, MySQL, Tailwind CSS",
+				"period": "2024",
+				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDYgeDYhXwguHywfK5RDvdRzbQQQfoojuQx9wo2n8hRrN7TsGjQiAc9ULzLzSK34sPvP6GKmtPXBK_HnAoVol72oh2ETqM6i8jtkhnIKlQV1c_SNi-KnJmEc4Kj7ArohYh6e122M81oejE68_kf6EjvifbZ0XmMZCbmUFVzhKtjAX0WdJpH1ivnWhus60KdpIQhlWnHDdfHyn-sJCrXzu9pQl8hR3PRAW_Rqbu7gT2zMF7WqqgGcvKBlJgvKsYyd5jfK8WiSWkbCJw"
+			}
+		]
+	},
+	"skills": {
+		"title": "Technical Capabilities",
+		"subtitle": "Technologies I use to deliver end-to-end applications.",
+		"webTitle": "Web Stack",
+		"mobileTitle": "Mobile Stack",
+		"webItems": [
+			"TypeScript",
+			"React.js",
+			"Next.js",
+			"NestJS",
+			"AdonisJS",
+			"Hono",
+			"Express",
+			"Node.js",
+			"Laravel"
+		],
+		"mobileItems": ["Flutter", "React Native Expo"]
+	},
+	"contact": {
+		"title": "Let’s collaborate on your next project.",
+		"subtitle": "I am available for freelance work, team collaboration, and product development initiatives.",
+		"namePlaceholder": "Your Name",
+		"emailPlaceholder": "Your Email",
+		"messagePlaceholder": "Tell me about your project...",
+		"send": "Send Message",
+		"subject": "Project Collaboration from Website",
+		"bodyLabelName": "Name",
+		"bodyLabelEmail": "Email",
+		"bodyLabelMessage": "Message"
+	},
+	"footer": {
+		"tagline": "Building digital products that are clean, fast, and impactful.",
+		"navigation": "Navigation",
+		"social": "Connect",
+		"copyright": "All rights reserved."
+	},
+	"seo": {
+		"home": {
+			"title": "Rizqi Bagus Andrean | Web & Mobile Developer Portfolio",
+			"description": "Official portfolio of Rizqi Bagus Andrean, an Informatics Engineering student focused on web and mobile application development, showcasing experience, projects, certifications, and technical stack.",
+			"keywords": "Rizqi Bagus Andrean, Portfolio, Web Developer, Mobile Developer, Flutter, React, TypeScript, Polinema",
+			"ogLocale": "en_US"
+		},
+		"project": {
+			"title": "Projects | Rizqi Bagus Andrean",
+			"description": "Collection of web and mobile projects by Rizqi Bagus Andrean, including architecture choices, technology stacks, and implementation context.",
+			"keywords": "Rizqi Bagus Andrean projects, web projects, mobile projects, portfolio showcase",
+			"ogLocale": "en_US"
+		}
+	},
+	"identity": {
+		"brand": "RBA Portfolio",
+		"name": "Rizqi Bagus Andrean",
+		"role": "Informatics Engineering Student • Web & Mobile Developer",
+		"email": "okebagus426@gmail.com",
+		"phone": "085155060743",
+		"location": "Tulungagung, East Java, Indonesia",
+		"linkedin": "https://www.linkedin.com/in/rizqi-bagus-andrean",
+		"github": "https://github.com/bagusok",
+		"instagram": "https://instagram.com",
+		"facebook": "https://facebook.com"
+	}
+}
