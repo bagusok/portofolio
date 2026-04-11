@@ -97,27 +97,35 @@
 	"projects": {
 		"title": "Selected Projects",
 		"subtitle": "Products I built with a focus on reliability and maintainability.",
+		"githubCta": "GitHub",
+		"liveCta": "Live Demo",
 		"items": [
 			{
 				"name": "Baguspay - PPOB & Game Top-up Platform",
 				"description": "PPOB and game top-up transaction platform built with a modular architecture for scalability.",
 				"stack": "Typescript, Monorepo, React.js, React Router v7, NestJS, AdonisJS, PostgreSQL, Redis, Tailwind CSS",
 				"period": "2025",
-				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWfEDY79CxVgSjw_6xAVchVdKe-yeGyU4PoDvycvL2AsbHZN9rje5pUArfJHU08NPeDCFpADjp8Z3HuEKkh1wTHu6pFuNmQc7sdsWqw_MtAmsuRxzpfQ6KlNt7sNHWVzeltKtQoo-9RL_42HTVX_-rs1HqdLN3cLOz22CVFr_snfdlBVmZuzfAH4YccskJ_MmixoO6XrtgdhdIu9q8OhE54hInbDhBOPMQAswmapAGbNpkzqXNAUae-a_1H-O6T_EHQEhXjjoEwwI"
+				"image": "baguspay-web.avif",
+				"githubUrl": "",
+				"liveUrl": ""
 			},
 			{
 				"name": "Miramine - Anime Streaming Platform",
 				"description": "Cross-platform streaming app implemented with a fullstack web and mobile approach.",
 				"stack": "Typescript, Next.js, Flutter, Hono, Bun, Tailwind CSS",
 				"period": "2024",
-				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBtb99m9g4LxKkAXpx6Mq41uAShdSifgDtDty7A5lxB-H3KxlWkKv6GdCJs6uD-oMO-N8jr7mFIo4qGs-WtCPtc-wVf5z97GETYOBU8GLd-SPE9BeTJ3wvxx5k5NREYAnkAaQ5XuHbAF7QxBy_kgD62eRptCQt5MHYs1cnWiz6vEQNyiopvtqfCAlPMBEFQ1UIkdGLJxImb9m1PUiVmcSnMpbRGu4ES2-dyFR-SBgMAX8svPICNDv4HaYEPWCXEa9YBoi69yBqZOSc"
+				"image": "miramine-app.avif",
+				"githubUrl": "",
+				"liveUrl": ""
 			},
 			{
 				"name": "Laskayara - Student Achievement Recording System",
 				"description": "Achievement recording platform with decision-support capabilities for relevant recommendation flows.",
 				"stack": "Typescript, PHP, Laravel, Inertia, React.js, MySQL, Tailwind CSS",
 				"period": "2024",
-				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDYgeDYhXwguHywfK5RDvdRzbQQQfoojuQx9wo2n8hRrN7TsGjQiAc9ULzLzSK34sPvP6GKmtPXBK_HnAoVol72oh2ETqM6i8jtkhnIKlQV1c_SNi-KnJmEc4Kj7ArohYh6e122M81oejE68_kf6EjvifbZ0XmMZCbmUFVzhKtjAX0WdJpH1ivnWhus60KdpIQhlWnHDdfHyn-sJCrXzu9pQl8hR3PRAW_Rqbu7gT2zMF7WqqgGcvKBlJgvKsYyd5jfK8WiSWkbCJw"
+				"image": "laskaraya-web.avif",
+				"githubUrl": "",
+				"liveUrl": ""
 			}
 		]
 	},

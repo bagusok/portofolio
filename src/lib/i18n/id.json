@@ -20,16 +20,10 @@
 	},
 	"about": {
 		"title": "Saya membangun solusi digital dari ide hingga implementasi.",
-		"description": "Fokus saya adalah menggabungkan logika bisnis, pengalaman pengguna, dan kualitas engineering agar aplikasi benar-benar memberi dampak.",
-		"points": [
-			"Berpengalaman mengerjakan project akademik, riset, dan freelance.",
-			"Terbiasa mengembangkan sistem rekomendasi berbasis Fuzzy dan TOPSIS.",
-			"Aktif membimbing pengembangan mobile app sebagai mentor miniclass."
-		]
+		"description": "Fokus saya adalah menggabungkan logika bisnis, pengalaman pengguna, dan kualitas engineering agar aplikasi benar-benar memberi dampak."
 	},
 	"education": {
 		"title": "Pendidikan",
-		"subtitle": "Perjalanan akademik dan kontribusi proyek selama studi.",
 		"items": [
 			{
 				"school": "Politeknik Negeri Malang",
@@ -51,8 +45,7 @@
 		]
 	},
 	"experience": {
-		"title": "Timeline Pengalaman",
-		"subtitle": "Perjalanan peran saya dari mentoring hingga leadership di divisi mobile development.",
+		"title": "Pengalaman & Organisasi",
 		"timeline": [
 			{
 				"role": "Mobile Developer Mentor Miniclass",
@@ -64,22 +57,12 @@
 				]
 			},
 			{
-				"role": "Wakil Ketua Divisi Mobile Developer",
-				"organization": "Workshop & Riset Informatika - Polinema",
-				"period": "Januari 2025 - Desember 2025",
-				"details": [
-					"Memimpin koordinasi program kerja divisi mobile development.",
-					"Menyusun roadmap pembelajaran dan pendampingan project anggota.",
-					"Tetap menjalankan peran mentor miniclass secara paralel."
-				]
-			},
-			{
 				"role": "Freelance Web Developer",
 				"organization": "Independent",
 				"period": "Januari 2023 - Sekarang",
 				"details": [
 					"Fixing bug pada website produksi.",
-					"Membuat bot dan automation untuk alur order.",
+					"Membuat bot untuk order produk via Telegram atau WhatsApp.",
 					"Mengimplementasikan multi payment gateway pada website."
 				]
 			}
@@ -87,7 +70,6 @@
 	},
 	"certifications": {
 		"title": "Sertifikasi",
-		"subtitle": "Validasi kompetensi melalui program pelatihan dan sertifikasi resmi.",
 		"items": [
 			"Junior Web Developer - BNSP (Juni 2025)",
 			"KKNI Level 2 Teknik Komputer dan Jaringan - BNSP (Mei 2022)",
@@ -96,28 +78,62 @@
 	},
 	"projects": {
 		"title": "Project Pilihan",
-		"subtitle": "Produk yang saya bangun dengan fokus pada reliability dan maintainability.",
+		"githubCta": "GitHub",
+		"liveCta": "Live Demo",
 		"items": [
 			{
 				"name": "Baguspay - PPOB & Topup Games Platform",
-				"description": "Platform transaksi PPOB dan topup game dengan arsitektur modular untuk skalabilitas.",
+				"description": "Platform pembayaran digital untuk top-up games dan layanan PPOB dengan fokus pada performa, keamanan, dan integrasi multi gateway.",
 				"stack": "Typescript, Monorepo, React.js, React Router v7, NestJS, AdonisJS, PostgreSQL, Redis, Tailwind CSS",
 				"period": "2025",
-				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBWfEDY79CxVgSjw_6xAVchVdKe-yeGyU4PoDvycvL2AsbHZN9rje5pUArfJHU08NPeDCFpADjp8Z3HuEKkh1wTHu6pFuNmQc7sdsWqw_MtAmsuRxzpfQ6KlNt7sNHWVzeltKtQoo-9RL_42HTVX_-rs1HqdLN3cLOz22CVFr_snfdlBVmZuzfAH4YccskJ_MmixoO6XrtgdhdIu9q8OhE54hInbDhBOPMQAswmapAGbNpkzqXNAUae-a_1H-O6T_EHQEhXjjoEwwI"
+				"image": "baguspay-web.avif",
+				"githubUrl": "https://github.com/bagusok/baguspay",
+				"liveUrl": ""
 			},
 			{
 				"name": "Miramine - Streaming Anime Platform",
 				"description": "Aplikasi streaming dengan pendekatan fullstack lintas platform web dan mobile.",
 				"stack": "Typescript, Next.js, Flutter, Hono, Bun, Tailwind CSS",
 				"period": "2024",
-				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuBtb99m9g4LxKkAXpx6Mq41uAShdSifgDtDty7A5lxB-H3KxlWkKv6GdCJs6uD-oMO-N8jr7mFIo4qGs-WtCPtc-wVf5z97GETYOBU8GLd-SPE9BeTJ3wvxx5k5NREYAnkAaQ5XuHbAF7QxBy_kgD62eRptCQt5MHYs1cnWiz6vEQNyiopvtqfCAlPMBEFQ1UIkdGLJxImb9m1PUiVmcSnMpbRGu4ES2-dyFR-SBgMAX8svPICNDv4HaYEPWCXEa9YBoi69yBqZOSc"
+				"image": "miramine-app.avif",
+				"githubUrl": "https://github.com/bagusok/miramine-app",
+				"liveUrl": ""
 			},
 			{
 				"name": "Laskayara - Sistem Pencatatan Prestasi Mahasiswa",
 				"description": "Sistem pencatatan prestasi dengan dukungan proses pengambilan keputusan untuk rekomendasi yang relevan.",
 				"stack": "Typescript, PHP, Laravel, Inertia, React.js, MySQL, Tailwind CSS",
+				"period": "2025",
+				"image": "laskaraya-web.avif",
+				"githubUrl": "https://github.com/bagusok/laskaraya",
+				"liveUrl": ""
+			},
+			{
+				"name": "Smart Green Energy - Show Case Penelitian",
+				"description": "Website untuk menampilkan hasil penelitian terkait energi hijau yang dilakukan oleh Smart Green Energy Research Center, Jurusan Teknik Elektro Polinema.",
+				"stack": "PHP, Alpine JS",
 				"period": "2024",
-				"image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDYgeDYhXwguHywfK5RDvdRzbQQQfoojuQx9wo2n8hRrN7TsGjQiAc9ULzLzSK34sPvP6GKmtPXBK_HnAoVol72oh2ETqM6i8jtkhnIKlQV1c_SNi-KnJmEc4Kj7ArohYh6e122M81oejE68_kf6EjvifbZ0XmMZCbmUFVzhKtjAX0WdJpH1ivnWhus60KdpIQhlWnHDdfHyn-sJCrXzu9pQl8hR3PRAW_Rqbu7gT2zMF7WqqgGcvKBlJgvKsYyd5jfK8WiSWkbCJw"
+				"image": "laskaraya-web.avif",
+				"githubUrl": "https://github.com/User-425/SmartGreenEnergy",
+				"liveUrl": ""
+			},
+			{
+				"name": "Polinemart - E-commerce Polinema UI Design",
+				"description": "Desain UI untuk platform e-commerce kampus Polinema dengan fokus pada pengalaman pengguna yang intuitif dan estetika modern.",
+				"stack": "Figma",
+				"period": "2024",
+				"image": "polinemart.png",
+				"githubUrl": "",
+				"liveUrl": ""
+			},
+			{
+				"name": "Dreamtsatsu Landing Page",
+				"description": "Landing Page untuk web brand Dreamtsatsu untuk jualan kaos",
+				"stack": "Next Js, Tailwind CSS",
+				"period": "2023",
+				"image": "dreamtsatsu-landing.png",
+				"githubUrl": "",
+				"liveUrl": ""
 			}
 		]
 	},
@@ -176,11 +192,10 @@
 		"name": "Rizqi Bagus Andrean",
 		"role": "Informatics Engineering Student • Web & Mobile Developer",
 		"email": "okebagus426@gmail.com",
-		"phone": "085155060743",
-		"location": "Tulungagung, Jawa Timur, Indonesia",
+		"location": "Jawa Timur, Indonesia",
 		"linkedin": "https://www.linkedin.com/in/rizqi-bagus-andrean",
 		"github": "https://github.com/bagusok",
-		"instagram": "https://instagram.com",
-		"facebook": "https://facebook.com"
+		"instagram": "https://instagram.com/rizqibagusandrean",
+		"facebook": "https://facebook.com/rizqibagus.andrean"
 	}
 }

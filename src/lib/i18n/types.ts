@@ -21,6 +21,8 @@ export type ProjectItem = {
 	stack: string;
 	period: string;
 	image: string;
+	githubUrl?: string;
+	liveUrl?: string;
 };
 
 export type Dictionary = {
@@ -66,6 +68,8 @@ export type Dictionary = {
 	projects: {
 		title: string;
 		subtitle: string;
+		githubCta: string;
+		liveCta: string;
 		items: ProjectItem[];
 	};
 	skills: {

@@ -5,7 +5,6 @@
 
 	const locale = $derived(data.locale);
 	const t = $derived(data.dictionary);
-	const alternateLocale = $derived<Locale>(locale === 'id' ? 'en' : 'id');
 	const currentUrl = $derived(`${data.baseUrl}/${locale}/project`);
 	const previewImage = '/portfolio-desktop-reference.png';
 </script>
@@ -17,7 +16,7 @@
 	<meta name="robots" content="index, follow" />
 	<link rel="canonical" href={currentUrl} />
 	<link rel="alternate" hreflang="id" href={`${data.baseUrl}/id/project`} />
-	<link rel="alternate" hreflang="en" href={`${data.baseUrl}/en/project`} />
+	<link rel="alternate" hreflang="x-default" href={`${data.baseUrl}/id/project`} />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={t.seo.project.title} />
 	<meta property="og:description" content={t.seo.project.description} />
@@ -38,25 +37,47 @@
 					href={`/${locale}`}
 					class="rounded-full bg-slate-200 px-4 py-2 text-sm font-bold text-slate-700">Home</a
 				>
-				<a
-					href={`/${alternateLocale}/project`}
-					class="rounded-full bg-[#ffd709] px-4 py-2 text-sm font-bold text-[#5b4b00]"
-					>{alternateLocale.toUpperCase()}</a
-				>
 			</div>
 		</div>
 
 		<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-			{#each t.projects.items as project}
+			{#each t.projects.items as project (project.name)}
 				<article
 					class="group overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 				>
-					<div class="aspect-[16/9] overflow-hidden">
+					<div class="relative aspect-video overflow-hidden">
 						<img
 							class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 							src={project.image}
 							alt={project.name}
 						/>
+						{#if project.githubUrl || project.liveUrl}
+							<div
+								class="absolute inset-0 flex items-start justify-end bg-black/25 p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+							>
+								<div class="flex flex-wrap justify-end gap-2">
+									{#if project.githubUrl}
+										<button
+											type="button"
+											onclick={() =>
+												window.open(project.githubUrl, '_blank', 'noopener,noreferrer')}
+											class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-800 transition hover:bg-slate-100"
+										>
+											{t.projects.githubCta}
+										</button>
+									{/if}
+									{#if project.liveUrl}
+										<button
+											type="button"
+											onclick={() => window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
+											class="rounded-full bg-[#ffd709] px-3 py-1 text-xs font-semibold text-[#5b4b00] transition hover:brightness-95"
+										>
+											{t.projects.liveCta}
+										</button>
+									{/if}
+								</div>
+							</div>
+						{/if}
 					</div>
 					<div class="space-y-3 p-5">
 						<div class="text-xs font-bold tracking-widest text-[#6c5a00] uppercase">

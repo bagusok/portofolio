@@ -1,9 +1,9 @@
-import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
 import { getDictionary } from '$lib/i18n/load';
 import type { Locale } from '$lib/i18n/types';
+import { error } from '@sveltejs/kit';
+import type { PageLoad } from './$types';
 
-const supportedLocales = ['id', 'en'] as const;
+const supportedLocales = ['id'] as const;
 
 const isLocale = (value: string): value is Locale => {
 	return supportedLocales.includes(value as Locale);

@@ -4,9 +4,7 @@
 	import './layout.css';
 
 	const { children } = $props();
-	const currentLocale = $derived(
-		page.params.lang === 'id' || page.params.lang === 'en' ? page.params.lang : 'en'
-	);
+	const currentLocale = $derived(page.params.lang === 'id' ? page.params.lang : 'id');
 </script>
 
 <svelte:head>

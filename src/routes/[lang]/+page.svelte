@@ -10,9 +10,7 @@
 
 	const locale = $derived(data.locale as Locale);
 	const t = $derived(data.dictionary);
-	const alternateLocale = $derived<Locale>(locale === 'id' ? 'en' : 'id');
 	const currentUrl = $derived(`${data.baseUrl}/${locale}`);
-	const alternateUrl = $derived(`${data.baseUrl}/${alternateLocale}`);
 	const previewImage = '/portfolio-desktop-reference.png';
 
 	const yearNow = new Date().getFullYear();
@@ -44,10 +42,9 @@
 	});
 
 	const navItems = $derived([
-		{ href: '#about', label: t.nav.about },
 		{ href: '#education', label: t.nav.education },
 		{ href: '#experience', label: t.nav.experience },
-		{ href: `#project`, label: t.nav.projects },
+		{ href: `#projects`, label: t.nav.projects },
 		{ href: '#skills', label: t.nav.skills },
 		{ href: '#contact', label: t.nav.contact }
 	]);
@@ -64,8 +61,7 @@
 	<meta name="robots" content="index, follow, max-image-preview:large" />
 	<link rel="canonical" href={currentUrl} />
 	<link rel="alternate" hreflang="id" href={`${data.baseUrl}/id`} />
-	<link rel="alternate" hreflang="en" href={`${data.baseUrl}/en`} />
-	<link rel="alternate" hreflang="x-default" href={`${data.baseUrl}/en`} />
+	<link rel="alternate" hreflang="x-default" href={`${data.baseUrl}/id`} />
 
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content={t.seo.home.title} />
@@ -103,7 +99,7 @@
 		>
 	</div>
 	<nav class="flex flex-col gap-3">
-		{#each navItems as item}
+		{#each navItems as item (item.href)}
 			<a
 				href={item.href}
 				class="rounded-xl px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
@@ -116,11 +112,6 @@
 			href={`/${locale}`}
 			class="rounded-full bg-[#ffd709] px-3 py-1 text-xs font-bold text-[#5b4b00]"
 			>{locale.toUpperCase()}</a
-		>
-		<a
-			href={`/${alternateLocale}`}
-			class="rounded-full bg-slate-200 px-3 py-1 text-xs font-bold text-slate-600"
-			>{alternateLocale.toUpperCase()}</a
 		>
 	</div>
 </aside>
@@ -136,7 +127,7 @@
 				</div>
 
 				<div class="hidden items-center space-x-6 text-sm md:flex">
-					{#each navItems as item}
+					{#each navItems as item (item.href)}
 						<a
 							class="headline font-bold text-slate-700 transition hover:scale-105 hover:text-slate-900"
 							href={item.href}>{item.label}</a
@@ -149,11 +140,6 @@
 						href={`/${locale}`}
 						class="rounded-full bg-[#ffd709] px-3 py-1 text-xs font-bold text-[#5b4b00]"
 						>{locale.toUpperCase()}</a
-					>
-					<a
-						href={`/${alternateLocale}`}
-						class="rounded-full bg-slate-200 px-3 py-1 text-xs font-bold text-slate-600"
-						>{alternateLocale.toUpperCase()}</a
 					>
 					<a
 						href="#contact"
@@ -171,9 +157,12 @@
 		</div>
 	</nav>
 
-	<section class="animate-rise pt-44 pb-24">
+	<!-- Hero Section -->
+	<section class="hero-grid-section animate-rise pt-44 pb-24">
+		<div class="hero-grid-bg" aria-hidden="true"></div>
+		<div class="hero-grid-glow" aria-hidden="true"></div>
 		<div
-			class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 px-8 md:flex-row"
+			class="relative z-10 mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 px-8 md:flex-row"
 		>
 			<div class="flex-1 space-y-8">
 				<div
@@ -188,7 +177,7 @@
 				<div class="flex flex-wrap gap-4 pt-4">
 					<a
 						href={`/${locale}/project`}
-						class="rounded-full border border-[#e3b900]/60 bg-gradient-to-r from-[#ffe27a] via-[#ffd709] to-[#f4bf00] px-8 py-4 text-lg font-bold text-[#5b4b00] shadow-[0_10px_24px_-10px_rgba(108,90,0,0.45)] transition-all duration-300 hover:scale-105 hover:brightness-105"
+						class="rounded-full border border-[#e3b900]/60 bg-linear-to-r from-[#ffe27a] via-[#ffd709] to-[#f4bf00] px-8 py-4 text-lg font-bold text-[#5b4b00] shadow-[0_10px_24px_-10px_rgba(108,90,0,0.45)] transition-all duration-300 hover:scale-105 hover:brightness-105"
 						>{t.hero.primaryCta}</a
 					>
 					<a
@@ -209,7 +198,7 @@
 					/>
 				</div>
 				<div
-					class="absolute -bottom-6 -left-6 max-w-[260px] -rotate-6 rounded-2xl bg-orange-200 p-6 shadow-xl"
+					class="absolute -bottom-6 -left-6 max-w-65 -rotate-6 rounded-2xl bg-orange-200 p-6 shadow-xl"
 				>
 					<p class="font-bold text-[#693d00]">{t.hero.note}</p>
 				</div>
@@ -217,30 +206,15 @@
 		</div>
 	</section>
 
-	<section id="about" class="bg-slate-100 py-20">
-		<div class="mx-auto max-w-7xl space-y-8 px-8">
-			<h2 class="headline text-4xl font-extrabold tracking-tight">{t.about.title}</h2>
-			<p class="max-w-4xl text-lg text-slate-600">{t.about.description}</p>
-			<ul class="grid gap-4 md:grid-cols-3">
-				{#each t.about.points as point}
-					<li
-						class="rounded-2xl bg-white p-5 text-sm leading-relaxed text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-					>
-						{point}
-					</li>
-				{/each}
-			</ul>
-		</div>
-	</section>
-
-	<section id="education" class="py-20">
+	<!-- Education Section -->
+	<section id="education" class="section-grid-light py-20">
 		<div class="mx-auto max-w-7xl px-8">
 			<div class="mb-10">
 				<h2 class="headline text-4xl font-extrabold tracking-tight">{t.education.title}</h2>
 				<p class="mt-3 text-slate-600">{t.education.subtitle}</p>
 			</div>
 			<div class="space-y-6">
-				{#each t.education.items as item}
+				{#each t.education.items as item (item.school)}
 					<article
 						class="rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 					>
@@ -253,7 +227,7 @@
 						<p class="font-semibold text-slate-700">{item.major}</p>
 						<p class="mt-1 text-sm text-[#6c5a00]">{item.grade}</p>
 						<ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-600">
-							{#each item.highlights as highlight}
+							{#each item.highlights as highlight (highlight)}
 								<li>{highlight}</li>
 							{/each}
 						</ul>
@@ -263,7 +237,8 @@
 		</div>
 	</section>
 
-	<section id="experience" class="bg-slate-100 py-20">
+	<!-- Experience Section -->
+	<section id="experience" class="section-grid-muted py-20">
 		<div class="mx-auto max-w-7xl px-8">
 			<div class="mb-10">
 				<h2 class="headline text-4xl font-extrabold tracking-tight">{t.experience.title}</h2>
@@ -272,7 +247,7 @@
 			<div
 				class="relative pl-8 before:absolute before:top-0 before:left-2 before:h-full before:w-0.5 before:bg-slate-300"
 			>
-				{#each t.experience.timeline as item}
+				{#each t.experience.timeline as item (item.role)}
 					<article
 						class="relative mb-8 rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 					>
@@ -287,7 +262,7 @@
 						</div>
 						<p class="text-sm font-semibold text-slate-700">{item.organization}</p>
 						<ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-600">
-							{#each item.details as detail}
+							{#each item.details as detail (detail)}
 								<li>{detail}</li>
 							{/each}
 						</ul>
@@ -297,14 +272,15 @@
 		</div>
 	</section>
 
-	<section class="py-20">
+	<!-- Certifications Section -->
+	<section id="certifications" class="section-grid-light py-20">
 		<div class="mx-auto max-w-7xl px-8">
 			<div class="mb-10">
 				<h2 class="headline text-4xl font-extrabold tracking-tight">{t.certifications.title}</h2>
 				<p class="mt-3 text-slate-600">{t.certifications.subtitle}</p>
 			</div>
 			<ul class="grid gap-4 md:grid-cols-3">
-				{#each t.certifications.items as cert}
+				{#each t.certifications.items as cert (cert)}
 					<li
 						class="rounded-2xl bg-white p-5 text-sm leading-relaxed text-slate-700 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 					>
@@ -315,7 +291,7 @@
 		</div>
 	</section>
 
-	<section id="projects" class="py-20">
+	<section id="projects" class="section-grid-muted py-20">
 		<div class="mx-auto max-w-7xl px-8">
 			<div class="mb-10 flex flex-wrap items-end justify-between gap-4">
 				<div>
@@ -329,16 +305,44 @@
 				>
 			</div>
 			<div class="grid gap-6 md:grid-cols-3">
-				{#each t.projects.items.slice(0, 3) as project}
+				{#each t.projects.items.slice(0, 3) as project (project.name)}
 					<article
 						class="group overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
 					>
-						<div class="aspect-[16/9] overflow-hidden">
+						<div class="relative aspect-video overflow-hidden">
 							<img
 								class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
 								src={project.image}
 								alt={project.name}
 							/>
+							{#if project.githubUrl || project.liveUrl}
+								<div
+									class="absolute inset-0 flex items-start justify-end bg-black/25 p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+								>
+									<div class="flex flex-wrap justify-end gap-2">
+										{#if project.githubUrl}
+											<button
+												type="button"
+												onclick={() =>
+													window.open(project.githubUrl, '_blank', 'noopener,noreferrer')}
+												class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-800 transition hover:bg-slate-100"
+											>
+												{t.projects.githubCta}
+											</button>
+										{/if}
+										{#if project.liveUrl}
+											<button
+												type="button"
+												onclick={() =>
+													window.open(project.liveUrl, '_blank', 'noopener,noreferrer')}
+												class="rounded-full bg-[#ffd709] px-3 py-1 text-xs font-semibold text-[#5b4b00] transition hover:brightness-95"
+											>
+												{t.projects.liveCta}
+											</button>
+										{/if}
+									</div>
+								</div>
+							{/if}
 						</div>
 						<div class="space-y-3 p-5">
 							<div class="text-xs font-bold tracking-widest text-[#6c5a00] uppercase">
@@ -353,7 +357,7 @@
 		</div>
 	</section>
 
-	<section id="skills" class="bg-slate-100 py-20">
+	<section id="skills" class="section-grid-light py-20">
 		<div class="mx-auto max-w-7xl px-8">
 			<div class="mb-10">
 				<h2 class="headline text-4xl font-extrabold tracking-tight">{t.skills.title}</h2>
@@ -363,7 +367,7 @@
 				<div class="rounded-2xl bg-white p-6 shadow-sm">
 					<h3 class="headline mb-4 text-2xl font-bold">{t.skills.webTitle}</h3>
 					<div class="flex flex-wrap gap-2">
-						{#each t.skills.webItems as skillName}
+						{#each t.skills.webItems as skillName (skillName)}
 							<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700"
 								>{skillName}</span
 							>
@@ -373,7 +377,7 @@
 				<div class="rounded-2xl bg-white p-6 shadow-sm">
 					<h3 class="headline mb-4 text-2xl font-bold">{t.skills.mobileTitle}</h3>
 					<div class="flex flex-wrap gap-2">
-						{#each t.skills.mobileItems as skillName}
+						{#each t.skills.mobileItems as skillName (skillName)}
 							<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700"
 								>{skillName}</span
 							>
@@ -384,7 +388,7 @@
 		</div>
 	</section>
 
-	<section id="contact" class="py-24">
+	<section id="contact" class="section-grid-muted py-24">
 		<div class="mx-auto max-w-7xl px-8">
 			<div class="relative overflow-hidden rounded-3xl bg-[#ffd709] p-10 md:p-16">
 				<div
@@ -448,7 +452,7 @@
 			<div>
 				<h4 class="headline text-lg font-bold text-slate-900">{t.footer.navigation}</h4>
 				<div class="mt-3 flex flex-col gap-2 text-sm">
-					{#each navItems as item}
+					{#each navItems as item (item.label)}
 						<a class="text-slate-600 transition hover:text-slate-900" href={item.href}
 							>{item.label}</a
 						>
@@ -548,6 +552,170 @@
 
 	.hover-float:hover {
 		transform: rotate(4deg) translateY(-8px);
+	}
+
+	.section-grid-light,
+	.section-grid-muted {
+		position: relative;
+		overflow: hidden;
+		isolation: isolate;
+	}
+
+	.section-grid-light > *,
+	.section-grid-muted > * {
+		position: relative;
+		z-index: 1;
+	}
+
+	.section-grid-light {
+		background: linear-gradient(180deg, #f7f8f9 0%, #f3f5f6 100%);
+	}
+
+	.section-grid-muted {
+		background: linear-gradient(180deg, #eef2f5 0%, #f2f4f6 100%);
+	}
+
+	.section-grid-light::before,
+	.section-grid-muted::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(to right, rgba(108, 90, 0, 0.09) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(108, 90, 0, 0.09) 1px, transparent 1px);
+		background-size: 38px 38px;
+		animation: grid-drift 28s linear infinite;
+		z-index: 0;
+	}
+
+	.section-grid-light::before {
+		opacity: 0.32;
+		mask-image: radial-gradient(circle at 18% 30%, black 30%, transparent 75%);
+	}
+
+	.section-grid-muted::before {
+		opacity: 0.26;
+		mask-image: radial-gradient(circle at 78% 35%, black 26%, transparent 74%);
+	}
+
+	.section-grid-light::after,
+	.section-grid-muted::after {
+		content: '';
+		position: absolute;
+		width: min(32vw, 360px);
+		height: min(32vw, 360px);
+		border-radius: 18px;
+		border: 1px solid rgba(255, 206, 72, 0.3);
+		z-index: 0;
+		pointer-events: none;
+	}
+
+	.section-grid-light::after {
+		right: -8%;
+		top: 12%;
+		background:
+			radial-gradient(circle at 30% 30%, rgba(255, 215, 9, 0.2), rgba(255, 215, 9, 0.02) 66%),
+			linear-gradient(145deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+		transform: rotate(-7deg);
+	}
+
+	.section-grid-muted::after {
+		left: -8%;
+		top: 18%;
+		background:
+			radial-gradient(circle at 68% 24%, rgba(154, 230, 255, 0.2), rgba(154, 230, 255, 0.02) 64%),
+			linear-gradient(155deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0));
+		transform: rotate(8deg);
+	}
+
+	.hero-grid-section {
+		position: relative;
+		overflow: hidden;
+		background: linear-gradient(180deg, #f8f9fa 0%, #f5f6f7 100%);
+	}
+
+	.hero-grid-bg {
+		position: absolute;
+		inset: 0;
+		background-image:
+			linear-gradient(to right, rgba(108, 90, 0, 0.12) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(108, 90, 0, 0.12) 1px, transparent 1px);
+		background-size: 44px 44px;
+		mask-image: radial-gradient(circle at 30% 30%, black 30%, transparent 78%);
+		opacity: 0.75;
+		animation: grid-drift 20s linear infinite;
+	}
+
+	.hero-grid-glow {
+		position: absolute;
+		inset: -10% -10% auto auto;
+		width: min(38vw, 520px);
+		height: min(38vw, 520px);
+		border: 1px solid rgba(255, 206, 72, 0.55);
+		border-radius: 24px;
+		background:
+			radial-gradient(circle at 30% 30%, rgba(255, 215, 9, 0.35), rgba(255, 215, 9, 0.02) 65%),
+			linear-gradient(145deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+		transform: rotate(-8deg);
+		box-shadow: 0 35px 80px -40px rgba(108, 90, 0, 0.4);
+		animation: glow-float 8s ease-in-out infinite;
+	}
+
+	@keyframes grid-drift {
+		from {
+			background-position:
+				0 0,
+				0 0;
+		}
+		to {
+			background-position:
+				44px 18px,
+				22px 44px;
+		}
+	}
+
+	@keyframes glow-float {
+		0%,
+		100% {
+			transform: rotate(-8deg) translateY(0);
+		}
+		50% {
+			transform: rotate(-6deg) translateY(12px);
+		}
+	}
+
+	@media (max-width: 767px) {
+		.hero-grid-bg {
+			background-size: 32px 32px;
+			opacity: 0.55;
+		}
+
+		.hero-grid-glow {
+			width: 70vw;
+			height: 70vw;
+			right: -25%;
+			top: -6%;
+		}
+
+		.section-grid-light::before,
+		.section-grid-muted::before {
+			background-size: 28px 28px;
+		}
+
+		.section-grid-light::after,
+		.section-grid-muted::after {
+			width: 58vw;
+			height: 58vw;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.section-grid-light::before,
+		.section-grid-muted::before,
+		.hero-grid-bg,
+		.hero-grid-glow {
+			animation: none;
+		}
 	}
 
 	@keyframes rise {

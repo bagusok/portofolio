@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import type { LayoutLoad } from './$types';
 
-const supported = ['id', 'en'] as const;
+const supported = ['id'] as const;
 type Locale = (typeof supported)[number];
 
 const isLocale = (value: string): value is Locale => {
@@ -13,7 +13,7 @@ export const load: LayoutLoad = ({ params, url }) => {
 	if (!isLocale(lang)) {
 		const pathname = url.pathname;
 		const suffix = pathname.startsWith('/') ? pathname : `/${pathname}`;
-		const fallback = `/en${suffix.replace(/^\/[^/]+/, '')}`;
+		const fallback = `/id${suffix.replace(/^\/[^/]+/, '')}`;
 		throw redirect(307, fallback);
 	}
 
